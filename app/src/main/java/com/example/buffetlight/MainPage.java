@@ -4,14 +4,11 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.LinearLayout;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
 import java.util.ArrayList;
 
@@ -31,7 +28,7 @@ public class MainPage extends AppCompatActivity {
 
         // Создание списка элементов
         ArrayList<ListItem> listItems = new ArrayList<>();
-        listItems.add(new ListItem("Амстердам", R.drawable.amsterdam));
+        listItems.add(new ListItem("Бокс Амстердам", R.drawable.amsterdam));
         listItems.add(new ListItem("Оливье", R.drawable.olivier));
         listItems.add(new ListItem("Октябрь", R.drawable.october));
         listItems.add(new ListItem("Яблочный компот", R.drawable.apple));
@@ -41,6 +38,21 @@ public class MainPage extends AppCompatActivity {
         // Установка адаптера
         ListItemAdapter adapter = new ListItemAdapter(this, listItems);
         listView.setAdapter(adapter);
+
+        // Обработка нажатий на элементы списка
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Получение нажатого элемента
+                ListItem clickedItem = listItems.get(position);
+
+                // Создание намерения для перехода на новую активность
+                Intent intent = new Intent(MainPage.this, ShowDetailActivity.class); // Замените CurrentActivity на MainPage
+
+                // Передача данных в новую активность
+                intent.putExtra("Бокс Амстердам", clickedItem.getText()); // Имя элемента
+                startActivity(intent);
+            }
+        });
     }
 }
-
