@@ -1,4 +1,4 @@
-package com.example.buffetlight;
+package com.example.buffetlight.poop;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.buffetlight.MainPage;
+import com.example.buffetlight.R;
 
 import java.util.List;
 
@@ -17,7 +20,7 @@ public class ListItemAdapter extends BaseAdapter {
     private LayoutInflater inflater;
 
     // Инициализируем inflater в конструкторе
-    public ListItemAdapter(Context context, List<ListItem> listItems) {
+    public ListItemAdapter(MainPage context, List<ListItem> listItems) {
         this.context = context;
         this.listItems = listItems;
         this.inflater = LayoutInflater.from(context); // Инициализация LayoutInflater
@@ -46,15 +49,21 @@ public class ListItemAdapter extends BaseAdapter {
         }
 
         // Ищем элементы в текущем представлении
-        ImageView imageView = convertView.findViewById(R.id.imageView8);
         TextView textView = convertView.findViewById(R.id.textView5);
+        ImageView imageView = convertView.findViewById(R.id.imageView8);
+        TextView textView2 = convertView.findViewById(R.id.textPrice);
+        TextView textView3 = convertView.findViewById(R.id.textIng);
+
 
         // Получаем текущий элемент из списка
         ListItem listItem = listItems.get(position);
 
         // Устанавливаем данные
-        imageView.setImageResource(listItem.getImageResId());
         textView.setText(listItem.getText());
+        imageView.setImageResource(listItem.getImageResId());
+        textView2.setText(listItem.getPrice());
+        textView3.setText(listItem.getIng());
+
 
         return convertView;
     }

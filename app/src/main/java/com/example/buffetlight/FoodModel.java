@@ -1,12 +1,17 @@
 package com.example.buffetlight;
 
+import com.google.gson.annotations.SerializedName;
+
 public class FoodModel {
+    @SerializedName("names")
     private String name;      // Название
+    @SerializedName("ingredients")
     private String ingredients; // Состав
-    private double price;     // Цена
+    @SerializedName("price")
+    private String price;     // Цена
 
     // Конструктор
-    public FoodModel(String name, String ingredients, double price) {
+    public FoodModel(String name, String ingredients, String price) {
         this.name = name;
         this.ingredients = ingredients;
         this.price = price;
@@ -33,12 +38,12 @@ public class FoodModel {
     }
 
     // Геттер для цены
-    public double getPrice() {
+    public String getPrice() {
         return price;
     }
 
     // Сеттер для цены
-    public void setPrice(double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 }
