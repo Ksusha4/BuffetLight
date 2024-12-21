@@ -37,11 +37,11 @@ public class MainPage extends AppCompatActivity {
         // Создание списка элементов
         ArrayList<ListItem> listItems = new ArrayList<>();
         listItems.add(new ListItem("Бокс Амстердам", R.drawable.amsterdam, "4500", "вафли, орехи, инжир, виноград, манго, шоколад, клубника, физалис."));
-        listItems.add(new ListItem("Оливье", R.drawable.olivier,"100", ""));
-        listItems.add(new ListItem("Октябрь", R.drawable.october,"100", ""));
-        listItems.add(new ListItem("Яблочный компот", R.drawable.apple,"100", ""));
-        listItems.add(new ListItem("Кофе", R.drawable.coffee,"100", ""));
-        listItems.add(new ListItem("Коктель с огурцом", R.drawable.cucumber,"100", ""));
+        listItems.add(new ListItem("Салат Оливье с семгой и красной икрой", R.drawable.olivier,"414", "семга слабосоленая, картофель, яйцо, горошек зеленый (консервированный), майонез, икра красная, перец черный (мельница)."));
+        listItems.add(new ListItem("Салат \"Октябрь\"", R.drawable.october,"500", "тыква, куриное филе, моцарелла-мини, маслины, сладкая масляно-соевая заправка."));
+        listItems.add(new ListItem("Долма с говядиной со сметанным соусом", R.drawable.dolma,"3273", "говядина, виноградные листья, сметана."));
+        listItems.add(new ListItem("Кофе с маршмеллоу", R.drawable.marshmallow,"399", "вода, кофе растворимый, маршмеллоу, сахар."));
+        listItems.add(new ListItem("Бокс Диснейленд", R.drawable.disneyland,"3600", "печенье, сыр косичка, сардельки, виноград, фисташки, гренки, канапе."));
 
         // Установка адаптера
         ListItemAdapter adapter = new ListItemAdapter(MainPage.this, listItems);
