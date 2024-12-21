@@ -63,6 +63,9 @@ public class MainPage extends AppCompatActivity {
 
             // Стартуем активность
             startActivity(intent);
+
+
+
         });
     }
 }
